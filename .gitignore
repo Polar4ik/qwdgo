@@ -1,0 +1,30 @@
+# Local configuration and device identifiers
+/config.txt
+/device.id
+/device.id.*
+/wg-turn.conf
+
+# Local environment and editor files
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Go test and profiling output
+*.test
+*.out
+coverage.*
+*.prof
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak

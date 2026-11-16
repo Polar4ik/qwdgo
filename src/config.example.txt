@@ -1,0 +1,39 @@
+# Конфиг консольного клиента (тот же протокол, что у Android-приложения).
+# Строки с # — комментарии. Ключи можно писать с дефисом или подчёркиванием.
+# Скопируйте в config.txt рядом с vk-turn.exe и заполните обязательные поля.
+# Запуск: vk-turn.exe
+# Или:    vk-turn.exe -config путь\к\config.txt
+# Флаги командной строки перекрывают значения из файла.
+
+# Обязательные
+peer = 1.2.3.4:56000
+vk = HASH_ЗВОНКА
+password = пароль_подключения
+
+# На ПК удобнее SOCKS5 (userspace WireGuard, без системного TUN).
+# vpn — только UDP-слушатель + файл wg-turn.conf (как на Android до VpnService).
+mode = socks
+socks = 127.0.0.1:1080
+# socks-auth = false
+# socks-user =
+# socks-pass =
+
+# Сколько TURN-потоков. Анонимный VK: кратно 9 (9, 18, ...). Аккаунт VK: не больше 4.
+workers = 9
+listen = 127.0.0.1:9000
+
+# Пустое значение — клиент сам создаст и сохранит device.id рядом с конфигом.
+device-id =
+
+# VK: anonymous (по умолчанию) или account (+ vk-creds-file с TURN-кредами).
+vk-auth = anonymous
+vk-anon-path = vkcalls
+captcha-mode = auto
+go-dns = yandex
+obfs = audio
+
+# turn-tcp = false
+# notls = false
+# turn =
+# port =
+# vk-creds-file =
